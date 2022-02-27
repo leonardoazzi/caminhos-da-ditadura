@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Caminhos da Ditadura</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-assets>
+        <a-asset-item id="radio" src="./assets/scene.gltf"></a-asset-item>
+        <img id="globo" src="./assets/globo.jpg"></img>
+      </a-assets>
+
+      <a-entity rotation="0 -15 0" position="-2.25 0 0">
+
+        <a-image src="#globo" position="0 3 -9"></a-image>
+
+        <a-entity position="-0.9 1.5 -9" gltf-model="#radio" scale="0.005 0.005 0.005" 
+        animation="property: scale; dur: 100; to: 0.005 0.00505 0.00505; loop: true; dir: alternate">
+          <a-sound src="./assets/radio.mp3" autoplay="true"></a-sound>
+          
+        </a-entity> 
+
+
+      </a-entity>
+        
+
+      <!-- <a-text
+        value="ABAIXO A DITADURA"
+        look-at="[gps-camera]"
+        scale="2 2 2"
+        rotation="90 0 0"
+        position="-2 2 -5"
+        gps-entity-place="latitude: your-latitude; longitude: your-longitude;"
+      >
+      </a-text>
+
+      <a-text
+      value="Rua Surupá"
+      look-at="[gps-camera]"
+      scale="10 10 10"
+      rotation="90 0 0"
+      gps-entity-place="latitude: -29.849231; longitude: -50.071003;"
+      ></a-text> -->
+
+      
+    
+      <a-camera rotation-reader> </a-camera>
+    </a-scene>
+  </body>
+</html>

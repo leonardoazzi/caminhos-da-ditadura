@@ -1,0 +1,23 @@
+{
+  "name": "caminhos-da-ditadura",
+  "version": "1.0.0",
+  "description": "Explore em Realidade Aumentada para Web as memórias e registros da repressão e resistência durante a ditadura civil-militar brasileira em Porto Alegre (1964-1985). Baseado no mapa produzido por Anita Natividade Carneiro, historiadora pela UFRGS (2018) e mestranda em História pelo PPGH/UFRGS. https://www.ufrgs.br/caminhosdaditaduraemportoalegre/sobre/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardoazzi/caminhos-da-ditadura.git"
+  },
+  "author": "Leonardo Azzi Martins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardoazzi/caminhos-da-ditadura/issues"
+  },
+  "homepage": "https://github.com/leonardoazzi/caminhos-da-ditadura#readme",
+  "keywords": [],
+  "devDependencies": {
+    "webpack": "^5.69.1"
+  }
+}
