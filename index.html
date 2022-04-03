@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Caminhos da Ditadura</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-troika-text@0.5.0/dist/aframe-troika-text.min.js"></script>
+
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;">
+
+      <!-- ASSETS  -->
+      <a-assets>
+
+        <a-asset-item id="radio" src="./assets/scene.gltf"></a-asset-item>
+        <img id="globo" src="./assets/globo.jpg"></img>
+
+      </a-assets>
+
+      <!-- CENA -->
+
+      <a-entity id = "RADIO_DITADURA"
+                rotation="0 -15 0" 
+                gps-entity-place="latitude: -30.052330; longitude: -51.182758;">
+        <a-image src="#globo" position="8 15 -9" scale="8 8 8"></a-image>
+
+        <a-entity position="-0.9 1.5 -9" 
+                  gltf-model="#radio" 
+                  scale="0.05 0.05 0.05" 
+                  animation="property: scale; dur: 100; to: 0.05 0.0505 0.0505; loop: true; dir: alternate">
+          
+          <a-sound src="./assets/radio.mp3" 
+                   autoplay="true">
+          </a-sound>
+          
+        </a-entity> 
+
+      </a-entity>
+    
+      <!-- DOPS NOVO -->
+      <a-entity id="DOPS_novo" 
+      rotation="0 0 0" 
+      position="0 0 0" 
+      gps-entity-place="latitude: -30.0472347; longitude: -51.2111378;"
+      >
+
+        <a-plane color="black" 
+                 position="0 0 -40" 
+                 width="12" 
+                 height="16" 
+                 look-at="[gps-camera]">   
+
+          <a-troika-text scale="2 2 2"
+                         max-width="5"
+                         position="0 0 0.5"
+                         value="DOPS 'novo'\n\nO DOPS (Departamento de Ordem Política e Social) de Porto Alegre entre 1966-1982, operou na prática como DOI-CODI (Destacamento de Operações de Informação - Centro de Operações de Defesa Interna). Assim como em muitos lugares do Brasil, o DOPS era o órgão de maior repressão do governo, servia também como escola de tortura. O total de vítimas está entre 700 e 1000 pessoas. Relato de Bona Garcia, preso político na época, sobre o local: quando me tiraram o capuz vi sangue nas paredes, sangue no piso, pessoas ensanguentadas jogadas no chão e se arrastando, rostos inchados, corpos cheios de marcas e feridas, ensanguentados, olhos em fogo, bocas contraídas mostrando coágulos no lugar dos dentes, gemidos e soluços, uivos de dor. Lembrei imediatamente o matadouro. Tive a sensação de estar num matadouro de gente. (1989, p.47/48)\n\nFontes: RUSCHEL, Davi Arenhart. Entre risos e prantos: as memórias acerca da luta armada contra a Ditadura no Rio Grande do Sul. 2011\nBAUER, Caroline Silveira. O departamento de ordem política e social do rio grande do sul (dops/rs): terrorismo de estado e ação de polícia política durante a ditadura civil-militar brasileira. http://periodicos.ufes.br/agora/article/view/1908 \n\nAtualmente, Palácio da Polícia, na sua calçada foi colocada uma placa memorial">
+          </a-troika-text>
+
+        </a-plane> 
+
+      </a-entity> 
+        
+
+      <!-- <a-text
+        value="ABAIXO A DITADURA"
+        look-at="[gps-camera]"
+        scale="2 2 2"
+        rotation="90 0 0"
+        position="-2 2 -5"
+        gps-entity-place="latitude: your-latitude; longitude: your-longitude;"
+      >
+      </a-text>
+
+      <a-text
+      value="Rua Surupá"
+      look-at="[gps-camera]"
+      scale="10 10 10"
+      rotation="90 0 0"
+      gps-entity-place="latitude: -29.849231; longitude: -50.071003;"
+      ></a-text> -->
+
+      
+    
+        <a-camera id="camera1" 
+            look-controls-enabled="true" 
+            arjs-look-controls="smoothingFactor: 0.1"
+            gps-camera
+            rotation-reader>
+
+      </a-camera>
+      <!-- ="simulateLatitude: -30.0472347; simulateLongitude: -51.2111378;" -->
+
+    </a-scene>
+  </body>
+</html>

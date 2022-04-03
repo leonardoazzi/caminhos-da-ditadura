@@ -18,9 +18,12 @@
       <a-assets>
         <a-asset-item id="radio" src="./assets/scene.gltf"></a-asset-item>
         <img id="globo" src="./assets/globo.jpg"></img>
+
+        <a-asset-item id="radio-da-legalidade" src="./assets/legalidade.mp3"></a-asset-item>
       </a-assets>
 
-      <a-entity rotation="0 -15 0" position="-2.25 0 0">
+      <!-- DEBUG -->
+      <!-- <a-entity rotation="0 -15 0" position="-2.25 0 0"">
 
         <a-image src="#globo" position="0 3 -9"></a-image>
 
@@ -30,29 +33,27 @@
           
         </a-entity> 
 
+      </a-entity> -->
+
+      <!-- Estátua de Leonel Brizola -->
+      <!-- https://www.google.com/maps/place/Est%C3%A1tua+de+Leonel+Brizola/@-30.0338927,-51.2305321,20.21z/data=!4m12!1m6!3m5!1s0x95197905183ad933:0xecb6f313f87bd7a8!2sEst%C3%A1tua+de+Leonel+Brizola!8m2!3d-30.0339647!4d-51.2303172!3m4!1s0x95197905183ad933:0xecb6f313f87bd7a8!8m2!3d-30.0339647!4d-51.2303172 -->
+      <a-entity id="estatua-leonel-brizola" 
+                rotation="0 -15 0" 
+                position="-2.25 0 0" 
+                gps-entity-place="latitude: -30.0338927; longitude: -51.2305321;">
+        
+        <a-entity id="radioModel" 
+                  position="-0.9 1.5 -9" 
+                  gltf-model="#radio" 
+                  scale="0.005 0.005 0.005" 
+                  animation="property: scale; dur: 100; to: 0.005 0.00505 0.00505; loop: true; dir: alternate">
+
+          <a-sound src="#radio-da-legalidade" 
+                   autoplay="true"></a-sound>
+          
+        </a-entity> 
 
       </a-entity>
-        
-
-      <!-- <a-text
-        value="ABAIXO A DITADURA"
-        look-at="[gps-camera]"
-        scale="2 2 2"
-        rotation="90 0 0"
-        position="-2 2 -5"
-        gps-entity-place="latitude: your-latitude; longitude: your-longitude;"
-      >
-      </a-text>
-
-      <a-text
-      value="Rua Surupá"
-      look-at="[gps-camera]"
-      scale="10 10 10"
-      rotation="90 0 0"
-      gps-entity-place="latitude: -29.849231; longitude: -50.071003;"
-      ></a-text> -->
-
-      
     
       <a-camera rotation-reader> </a-camera>
     </a-scene>
